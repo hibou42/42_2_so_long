@@ -20,6 +20,12 @@ MINILBX			=		-Lmlx -lmlx -framework OpenGL -framework AppKit
 MLIBFT			=		$(MAKE) -C libft
 MMLX			=		$(MAKE) -C mlx
 
+ifeq ($(shell uname), Linux)
+MLXLIB			=		./mlx-linux/libmlx.a
+MINILBX			=		-L ./mlx-linux/ -lmlx -Ilmlx -lXext -lX11
+MMLX			=		$(MAKE) -C mlx-linux
+endif
+
 #***** Couleurs *****#
 
 GREEN			=		\033[1;32m
