@@ -9,6 +9,8 @@ MAKEFLAGS += --no-print-directory
 #***** Sources / Objs *****#
 
 SRC				=		z_test.c \
+						error/error.c \
+						
 
 OBJS			=		$(SRC:.c=.o)
 
@@ -86,8 +88,8 @@ l :			${OBJS}
 test: 		all
 			@${CC} ${MINILBX} ${CFLAGS} ${OBJS} libft/libft.a
 			@$(TEST)
-			@./a.out
-			@rm -f ./a.out			
+			@./a.out maps/map1.ber
+			rm -f ./a.out			
 
 #***** Clean *****#
 
@@ -103,6 +105,7 @@ fclean:		clean
 			@${RM} ${NAME}
 			@cd libft && make fclean
 			@cd mlx && make clean
+			@rm -rf .DS_Store
 			@echo "$(GREEN)Cleaning succes$(ENDCOLOR)"
 
 re:			fclean all

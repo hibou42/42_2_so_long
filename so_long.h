@@ -4,4 +4,7 @@
 #include "./libft/libft.h"
 #include "./mlx/mlx.h"
 
+int	check_arg(int argc, char **argv);
+
+
 #endif
