@@ -10,6 +10,7 @@ MAKEFLAGS += --no-print-directory
 
 SRC				=		z_test.c \
 						error/error.c \
+						init/checkmap.c \
 						
 
 OBJS			=		$(SRC:.c=.o)

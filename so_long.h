@@ -5,6 +5,6 @@
 #include "./mlx/mlx.h"
 
 int	check_arg(int argc, char **argv);
-
+int check_map(char **argv);
 
 #endif

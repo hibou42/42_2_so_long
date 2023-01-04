@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:20:27 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/03 15:20:41 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/04 10:42:12 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_arg (int argc, char **argv)
 	}
 	if (check_extension(argv, size_argv) == 1)
 	{
-		ft_printf("Probleme d'extension \n");
+		ft_printf("Probleme d'extension\n");
 		exit(0);
 	}
 	return (0);
