@@ -18,8 +18,8 @@ int check_map(char **argv)
     int i;
 
 	fd = open(argv[1], 0);
-	i = 1;
-	while (i != 0)
+	i = 0;
+	while (i < 5)
 	{	
 		ft_printf(get_next_line(fd));
 		i++;
