@@ -77,7 +77,7 @@ logo :
 
 $(NAME) :	${OBJS}
 			@$(BS_N)
-			@${CC} ${MINILBX} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}
+			@${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT} ${MLXLIB} ${MINILBX}
 			@$(END_COMP)
 			@tput setaf 2; cat ascii_art/small_hibou1; tput setaf default
 
@@ -87,7 +87,7 @@ l :			${OBJS}
 			@$(END_COMP)
 
 test: 		all
-			@${CC} ${MINILBX} ${CFLAGS} ${OBJS} libft/libft.a
+			@${CC} ${CFLAGS} ${OBJS} libft/libft.a ${MLXLIB} ${MINILBX}
 			@$(TEST)
 			@./a.out maps/map1.ber
 			rm -f ./a.out			

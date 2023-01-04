@@ -18,19 +18,17 @@ int	close_window(void *param)
 	exit(0);
 }
 
-int	deal_mouse(int key, void *param)
+int	deal_mouse(int key)
 {
 	ft_printf("mouse no = %d\n", key);
-	param = 0;
 	return (0);
 }
 
-int	deal_key(int key, void *param)
+int	deal_key(int key)
 {
 	ft_printf("key no = %d\n", key);
 	if (key == 53)
 		close_window((void*)0);
-	param = 0;
 	return (0);
 }
 
