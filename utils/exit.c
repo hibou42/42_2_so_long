@@ -21,7 +21,7 @@ int	close_window(void *param)
 int free_and_exit (t_map *map)
 {
     int tmp = map->y;
-    tmp = 0;
+    (void)tmp;
     ft_printf("free and exit\n");
 	exit(0);
 }

@@ -17,7 +17,7 @@ int wall_check(t_map *map)
     int res;
     
     int tmp = map->y;
-    tmp = 0;
+    (void)tmp;
 
     res = 0;
     return (res);
