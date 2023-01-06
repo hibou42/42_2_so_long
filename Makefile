@@ -9,8 +9,11 @@ MAKEFLAGS += --no-print-directory
 #***** Sources / Objs *****#
 
 SRC				=		z_test.c \
-						error/error.c \
-						init/checkmap.c \
+						init/map.c \
+						utils/exit.c \
+						error/arg.c \
+						error/tab.c \
+						
 						
 
 OBJS			=		$(SRC:.c=.o)
