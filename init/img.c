@@ -6,14 +6,14 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 17:20:36 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/07 20:03:59 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/07 21:05:20 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
 void push_img(t_map *map, int x, int y, void *img)
 {
-    printf("push img x = %d push img y = %d\n", x, y);
     mlx_put_image_to_window(map->mlx, map->mlx_win, img, x, y);
 }
 
@@ -34,14 +34,11 @@ void init_img(t_map *map)
     
     img_loading(map);
     y = 0;
-    printf("map->y = %d\n", map->y);
     while (y < map->y)
     {
         x = 0;
-        printf("map->x = %d\n", map->x);
-        while (x < map->x - 1)
+        while (x < map->x)
         {
-            printf("maps[y][x] = %c\n", map->maps[y][x]);
             if (map->maps[y][x] == '1')
                 push_img(map, x * 64, y * 64, map->img_wall);
             if (map->maps[y][x] == '0')

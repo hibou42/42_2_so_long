@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:37:23 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/07 16:47:34 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/07 21:01:46 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int x_check(t_map *map)
     i = 0;
     while (i < map->y)
     {
-        tmp = ft_strlen(map->maps[i]);
+        tmp = ft_strlen(map->maps[i]) - 1;
         if (tmp != map->x)
             res = 1;
         i++;

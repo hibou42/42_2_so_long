@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:37:51 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/07 18:29:56 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/07 21:00:20 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void map_size(char **argv, t_map *map)
 
 	fd = open(argv[1], 0);
 	tmp = get_next_line(fd);
-	map->x = ft_strlen(tmp);
+	map->x = ft_strlen(tmp) - 1;
 	i = 1;
 	while (tmp)
 	{
