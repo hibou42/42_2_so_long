@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:37:23 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/06 16:49:39 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/07 16:47:34 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int wall_check(t_map *map)
 {
+    // a faire
     int res;
     
     int tmp = map->y;
@@ -34,7 +35,6 @@ int x_check(t_map *map)
     while (i < map->y)
     {
         tmp = ft_strlen(map->maps[i]);
-        printf("map[i] = %d\n", tmp);
         if (tmp != map->x)
             res = 1;
         i++;
@@ -57,8 +57,6 @@ void check_tab (t_map *map)
     res += y_check(map);
     res += x_check(map);
     res += wall_check(map);
-    printf("x = %d\n", map->x);
-    printf("res = %d\n", res);
     if (res > 0)
         free_and_exit(map);
 }

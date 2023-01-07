@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:37:51 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/06 16:49:37 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:29:56 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,4 @@ void init_map(char **argv, t_map *map)
     map_size(argv, map);
 	map_in_tab(argv, map);
 	check_tab(map);
-
-	int i = 0;
-	while (i < map->y)
-	{
-		printf("%s", map->maps[i]);
-		i++;
-	}
 }

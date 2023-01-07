@@ -10,7 +10,8 @@ MAKEFLAGS += --no-print-directory
 
 SRC				=		z_test.c \
 						init/map.c \
-						utils/exit.c \
+						init/img.c \
+						error/exit.c \
 						error/arg.c \
 						error/tab.c \
 						
@@ -74,7 +75,7 @@ start:
 logo :
 			@tput setaf 2; cat ascii_art/hibou; tput setaf default
 
-%.o:		%.c ./libft/libft.h Makefile
+%.o:		%.c ./libft/libft.h Makefile so_long.h
 			@$(CC) $(CFLAGS) -c $< -o $@
 			@$(CHARG_LINE)
 
