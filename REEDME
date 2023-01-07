@@ -1,9 +1,12 @@
-06.01.2022
+07.01.2022
 map go in tab / OK
+draw sprites on img / OK
+
 but ! with \n and other, creat weard thing with x_check and other
 actually, the map need one line free at the end othervise error
 
 next step 
 clean tab
-creat the window with the size of the tab then sprite add img
-error.c wall 
+error.c wall
+add more sprite
+game
