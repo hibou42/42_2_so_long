@@ -19,10 +19,10 @@ void	push_img(t_map *map, int x, int y, void *img)
 
 void	img_loading(t_map *map)
 {
-	map->img_ground = mlx_xpm_file_to_image(map->mlx, "./sprites/ground1.xpm", &map->img_x, &map->img_y);
+	map->img_ground = mlx_xpm_file_to_image(map->mlx, "./sprites/grass.xpm", &map->img_x, &map->img_y);
 	if (map->img_ground == NULL)
 		exit(0);
-	map->img_wall = mlx_xpm_file_to_image(map->mlx, "./sprites/wall1.xpm", &map->img_x, &map->img_y);
+	map->img_wall = mlx_xpm_file_to_image(map->mlx, "./sprites/wall.xpm", &map->img_x, &map->img_y);
 	if (map->img_wall == NULL)
 		exit(0);
 }
