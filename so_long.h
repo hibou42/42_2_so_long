@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/10 16:53:08 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/01/10 16:53:26 by aschaefe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -28,7 +40,7 @@
 
 # define SPRITE					64
 
-#include "./libft/libft.h"
+# include "./libft/libft.h"
 
 typedef struct s_map
 {
@@ -44,11 +56,11 @@ typedef struct s_map
 
 }		t_map;
 
-int check_arg(int argc, char **argv);
-void init_map(char **argv, t_map *map);
-void check_tab(t_map *map);
-int close_window(t_map *map);
-int free_and_exit(t_map *map);
-void init_img(t_map *map);
+int		check_arg(int argc, char **argv);
+void	init_map(char **argv, t_map *map);
+void	check_tab(t_map *map);
+int		close_window(t_map *map);
+int		free_and_exit(t_map *map);
+void	init_img(t_map *map);
 
 #endif

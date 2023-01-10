@@ -8,7 +8,7 @@ MAKEFLAGS += --no-print-directory
 
 #***** Sources / Objs *****#
 
-SRC				=		z_test.c \
+SRC				=		so_long.c \
 						init/map.c \
 						init/img.c \
 						error/exit.c \

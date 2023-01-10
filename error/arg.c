@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:20:27 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/10 15:47:57 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:55:04 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_extension(char **argv, int size_argv)
 	return (res);
 }
 
-int	check_arg (int argc, char **argv)
+int	check_arg(int argc, char **argv)
 {
 	int	size_argv;
 

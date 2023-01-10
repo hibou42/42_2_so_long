@@ -6,13 +6,13 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:37:51 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/07 21:00:20 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:53:52 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void map_in_tab(char **argv, t_map *map)
+void	map_in_tab(char **argv, t_map *map)
 {
 	int		fd;
 	int		i;
@@ -28,7 +28,7 @@ void map_in_tab(char **argv, t_map *map)
 	close(fd);
 }
 
-void map_size(char **argv, t_map *map)
+void	map_size(char **argv, t_map *map)
 {
 	char	*tmp;
 	int		fd;
@@ -40,18 +40,18 @@ void map_size(char **argv, t_map *map)
 	i = 1;
 	while (tmp)
 	{
-		tmp = NULL;
 		free(tmp);
 		tmp = get_next_line(fd);
 		i++;
 	}
+	free(tmp);
 	map->y = i - 1;
 	close(fd);
 }
 
-void init_map(char **argv, t_map *map)
+void	init_map(char **argv, t_map *map)
 {
-    map_size(argv, map);
+	map_size(argv, map);
 	map_in_tab(argv, map);
 	check_tab(map);
 }
