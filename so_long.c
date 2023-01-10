@@ -15,13 +15,21 @@
 int	deal_key(int key, t_map *map)
 {
 	if (key == LEFT_KEY || key == A_KEY)
-		{}
+		{
+			ft_printf("Left\n");
+		}
 	if (key == DOWN_KEY || key == S_KEY)
-		{}
+		{
+			ft_printf("Down\n");
+		}
 	if (key == RIGHT_KEY || key == D_KEY)
-		{}
-	if (key == LEFT_KEY || key == A_KEY)
-		{}
+		{
+			ft_printf("Right\n");
+		}
+	if (key == UP_KEY || key == W_KEY)
+		{
+			ft_printf("Up\n");
+		}
 	if (key == ESC)
 		close_window(map);
 	return (0);
