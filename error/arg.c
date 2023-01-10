@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:20:27 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/06 16:50:37 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:47:57 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ int	check_arg (int argc, char **argv)
 {
 	int	size_argv;
 
+	if (argc != 2)
+	{
+		ft_printf("Error : Veuillez charger une seule map...\n");
+		exit(0);
+	}
 	size_argv = 0;
 	while (argv[1][size_argv] != '\0')
 		size_argv ++;
-	if (argc != 2)
-	{
-		ft_printf("Les arguments ne sont pas bons...\n");
-		exit(0);
-	}
 	if (check_extension(argv, size_argv) == 1)
 	{
-		ft_printf("Probleme d'extension\n");
+		ft_printf("Error : Probleme d'extension de map...\n");
 		exit(0);
 	}
 	return (0);

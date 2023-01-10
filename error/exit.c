@@ -6,23 +6,31 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:56:40 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/07 16:47:09 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:10:31 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	close_window(void *param)
+int free_and_exit (t_map *map)
 {
-	(void)param;
+	int		i;
+
+	i = 0;
+	while (i < map->y)
+	{
+		free(map->maps[i]);
+		i++;
+	}
+	free(map->maps);
+	ft_printf("free and exit\n");
 	exit(0);
 }
 
-int free_and_exit (t_map *map)
+int	close_window(t_map *map)
 {
-    // to do
-    int tmp = map->y;
-    (void)tmp;
-    ft_printf("free and exit\n");
+	if (map->maps)
+		free_and_exit(map);
+	ft_printf("exit windows\n");
 	exit(0);
 }

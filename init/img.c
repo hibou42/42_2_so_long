@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 17:20:36 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/07 21:05:20 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/10 13:54:31 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void init_img(t_map *map)
         while (x < map->x)
         {
             if (map->maps[y][x] == '1')
-                push_img(map, x * 64, y * 64, map->img_wall);
+                push_img(map, x * SPRITE, y * SPRITE, map->img_wall);
             if (map->maps[y][x] == '0')
-                push_img(map, x * 64, y * 64, map->img_ground); 
+                push_img(map, x * SPRITE, y * SPRITE, map->img_ground); 
             x++;
         }
         y++;

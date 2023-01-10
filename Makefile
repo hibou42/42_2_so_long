@@ -87,14 +87,8 @@ $(NAME) :	${OBJS}
 
 l :			${OBJS}
 			${MLIBFT} all
-			${CC} ${MINILBX} ${L} -o ${NAME} ${OBJS} ${LIBFT}
-			@$(END_COMP)
-
-test: 		all
-			@${CC} ${CFLAGS} ${OBJS} libft/libft.a ${MLXLIB} ${MINILBX}
-			@$(TEST)
-			@./a.out maps/map1.ber
-			rm -f ./a.out			
+			@${CC} ${L} -o ${NAME} ${OBJS} ${LIBFT} ${MLXLIB} ${MINILBX}
+			@$(END_COMP)	
 
 #***** Clean *****#
 
