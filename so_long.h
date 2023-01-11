@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:53:08 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/10 16:53:26 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:42:16 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ typedef struct s_map
 	void	*img_ground;
 	void	*img_wall;
 	void	*img_player;
-	void	*img_hunter;
 	void	*img_coin;
 	void	*img_exit_empty;
 	void	*img_exit_full;
