@@ -46,11 +46,16 @@ typedef struct s_map
 {
 	void	*mlx;
 	void	*mlx_win;
-	void	*img_ground;
-	void	*img_wall;
 	char	**maps;
 	int		x;
 	int		y;
+	void	*img_ground;
+	void	*img_wall;
+	void	*img_player;
+	void	*img_hunter;
+	void	*img_coin;
+	void	*img_exit_empty;
+	void	*img_exit_full;
 	int		img_x;
 	int		img_y;
 

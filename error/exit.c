@@ -23,7 +23,7 @@ int	free_and_exit(t_map *map)
 		i++;
 	}
 	free(map->maps);
-	ft_printf("Thanks for playing !!!\n");
+	ft_printf("Free & Exit\n");
 	exit(0);
 }
 

@@ -34,7 +34,7 @@ int	check_arg(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_printf("Error : Veuillez charger une seule map...\n");
+		ft_printf("Error\nVeuillez charger une seule map...\n");
 		exit(0);
 	}
 	size_argv = 0;
@@ -42,7 +42,7 @@ int	check_arg(int argc, char **argv)
 		size_argv ++;
 	if (check_extension(argv, size_argv) == 1)
 	{
-		ft_printf("Error : Probleme d'extension de map...\n");
+		ft_printf("Error\nProbleme d'extension de map...\n");
 		exit(0);
 	}
 	return (0);
