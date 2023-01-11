@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 17:20:36 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 12:42:10 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:31:55 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,8 @@ void	init_img(t_map *map)
 				push_img(map, x * SPRITE, y * SPRITE, map->img_player);
 			if (map->maps[y][x] == 'C')
 				push_img(map, x * SPRITE, y * SPRITE, map->img_coin);
-			if (map->maps[y][x] == 'e')
-				push_img(map, x * SPRITE, y * SPRITE, map->img_exit_empty);
 			if (map->maps[y][x] == 'E')
-				push_img(map, x * SPRITE, y * SPRITE, map->img_exit_full);
+				push_img(map, x * SPRITE, y * SPRITE, map->img_exit_empty);
 			x++;
 		}
 		y++;

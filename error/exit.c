@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:56:40 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/10 16:51:16 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:32:45 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int	close_window(t_map *map)
 {
 	if (map->maps)
 		free_and_exit(map);
-	ft_printf("exit windows\n");
+	ft_printf("Exit windows\n");
 	exit(0);
 }

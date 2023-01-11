@@ -14,6 +14,7 @@ SRC				=		so_long.c \
 						error/exit.c \
 						error/arg.c \
 						error/tab.c \
+						error/elements.c \
 						
 						
 

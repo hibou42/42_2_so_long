@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:53:08 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 12:42:16 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:03:56 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_map
 	char	**maps;
 	int		x;
 	int		y;
+	int		nb_coin;
 	void	*img_ground;
 	void	*img_wall;
 	void	*img_player;
@@ -63,6 +64,8 @@ typedef struct s_map
 int		check_arg(int argc, char **argv);
 void	init_map(char **argv, t_map *map);
 void	check_tab(t_map *map);
+int		element_check(t_map *map, int x, int y);
+int		element_check2(t_map *map, int x, int y);
 int		close_window(t_map *map);
 int		free_and_exit(t_map *map);
 void	init_img(t_map *map);

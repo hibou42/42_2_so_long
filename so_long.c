@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:23:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 12:32:11 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/11 16:19:51 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,18 @@ int	deal_key(int key, t_map *map)
 	return (0);
 }
 
+void	init_struct(t_map *map)
+{
+	map->x = 0;
+	map->y = 0;
+	map->nb_coin = 0;
+}
+
 int	main(int argc, char **argv)
 {
 	t_map	map;
 
+	init_struct(&map);
 	check_arg(argc, argv);
 	init_map(argv, &map);
 	map.mlx = mlx_init();
