@@ -28,6 +28,7 @@ int	main(int argc, char **argv)
 	init_struct(&map);
 	check_arg(argc, argv);
 	init_map(argv, &map);
+	//parsing(&map);
 	map.mlx = mlx_init();
 	map.mlx_win = mlx_new_window(map.mlx, map.x * SPRITE, map.y * SPRITE, "So Long");
 	init_img(&map);

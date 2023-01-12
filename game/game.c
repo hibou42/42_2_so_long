@@ -24,7 +24,10 @@ void	move(t_map *map, int move_y, int move_x)
 		map->pos_y += move_y;
 		push_img(map, map->pos_x * SPRITE, map->pos_y * SPRITE, map->img_player);
 		if (next_case == 'C')
+		{
 			map->nb_coin--;
+			map->maps[map->pos_y][map->pos_x] = '0';
+		}
 		map->step_cpt++;
 		ft_printf("Step n°%d\n", map->step_cpt);
 	}
@@ -33,8 +36,6 @@ void	move(t_map *map, int move_y, int move_x)
 		ft_printf("Victory !!!\n");
 		close_window(map);
 	}
-	else
-		printf("Bloquer\n");
 }
 
 void	deal_key(int key, t_map *map)

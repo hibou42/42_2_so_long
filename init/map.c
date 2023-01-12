@@ -74,6 +74,11 @@ void	map_size(char **argv, t_map *map)
 	free(tmp);
 	map->y = i - 1;
 	close(fd);
+	if ((map->x * SPRITE) > 1920 || (map->y * SPRITE) > 1080)
+	{
+		ft_printf("Error\nLa map est trop grande\n");
+		close_window(map);
+	}
 }
 
 void	init_map(char **argv, t_map *map)

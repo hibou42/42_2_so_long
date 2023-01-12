@@ -69,12 +69,13 @@ typedef struct s_map
 int		check_arg(int argc, char **argv);
 void	init_map(char **argv, t_map *map);
 void	check_tab(t_map *map);
+void	parsing(t_map *map);
 int		element_check(t_map *map, int x, int y);
 int		element_check2(t_map *map, int x, int y);
-int		close_window(t_map *map);
-int		free_and_exit(t_map *map);
 void	init_img(t_map *map);
 void	push_img(t_map *map, int x, int y, void *img);
 int		game(int key, t_map *map);
+int		close_window(t_map *map);
+int		free_and_exit(t_map *map);
 
 #endif

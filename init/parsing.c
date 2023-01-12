@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   tab.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 15:56:40 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 13:32:45 by aschaefe         ###   ########.fr       */
+/*   Created: 2023/01/06 15:37:23 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/01/11 16:29:07 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-int	free_and_exit(t_map *map)
+/*
+void	parsing(t_map *map)
 {
-	int		i;
+	
+	char	**cpy_maps;
+	int		retour;
 
-	i = 0;
-	while (i < map->y)
+	cpy_maps = map->maps;
+	retour = 42;
+	
+	while (retour != 0)
 	{
-		free(map->maps[i]);
-		i++;
+		retour = force_0();
+		retour = force_X();
 	}
-	free(map->maps);
-	exit(0);
+	
 }
-
-int	close_window(t_map *map)
-{
-	if (map->maps)
-		free_and_exit(map);
-	exit(0);
-}
+*/
