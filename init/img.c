@@ -17,26 +17,32 @@ void	push_img(t_map *map, int x, int y, void *img)
 	mlx_put_image_to_window(map->mlx, map->mlx_win, img, x, y);
 }
 
+void	error_sprite(t_map *map)
+{
+	ft_printf("Error\nSprite.s introuvable.s\n");
+	close_window(map);
+}
+
 void	img_loading(t_map *map)
 {
 	map->img_ground = mlx_xpm_file_to_image(map->mlx, "./sprites/grass.xpm", &map->img_x, &map->img_y);
 	if (map->img_ground == NULL)
-		exit(0);
+		error_sprite(map);
 	map->img_wall = mlx_xpm_file_to_image(map->mlx, "./sprites/tree.xpm", &map->img_x, &map->img_y);
 	if (map->img_wall == NULL)
-		exit(0);
+		error_sprite(map);
 	map->img_player = mlx_xpm_file_to_image(map->mlx, "./sprites/owl.xpm", &map->img_x, &map->img_y);
-	if (map->img_ground == NULL)
-		exit(0);
+	if (map->img_player == NULL)
+		error_sprite(map);
 	map->img_coin = mlx_xpm_file_to_image(map->mlx, "./sprites/wood_stick.xpm", &map->img_x, &map->img_y);
-	if (map->img_ground == NULL)
-		exit(0);
+	if (map->img_coin == NULL)
+		error_sprite(map);
 	map->img_exit_empty = mlx_xpm_file_to_image(map->mlx, "./sprites/exit_empty.xpm", &map->img_x, &map->img_y);
-	if (map->img_wall == NULL)
-		exit(0);
+	if (map->img_exit_empty == NULL)
+		error_sprite(map);
 	map->img_exit_full = mlx_xpm_file_to_image(map->mlx, "./sprites/exit_full.xpm", &map->img_x, &map->img_y);
-	if (map->img_ground == NULL)
-		exit(0);
+	if (map->img_exit_full == NULL)
+		error_sprite(map);
 }
 
 void	init_img(t_map *map)

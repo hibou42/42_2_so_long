@@ -50,6 +50,11 @@ typedef struct s_map
 	int		x;
 	int		y;
 	int		nb_coin;
+	int		pos_x;
+	int		pos_y;
+	int		exit_x;
+	int		exit_y;
+	int		step_cpt;
 	void	*img_ground;
 	void	*img_wall;
 	void	*img_player;
@@ -69,5 +74,7 @@ int		element_check2(t_map *map, int x, int y);
 int		close_window(t_map *map);
 int		free_and_exit(t_map *map);
 void	init_img(t_map *map);
+void	push_img(t_map *map, int x, int y, void *img);
+int		game(int key, t_map *map);
 
 #endif

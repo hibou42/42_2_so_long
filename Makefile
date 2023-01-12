@@ -11,12 +11,11 @@ MAKEFLAGS += --no-print-directory
 SRC				=		so_long.c \
 						init/map.c \
 						init/img.c \
+						game/game.c \
 						error/exit.c \
 						error/arg.c \
 						error/tab.c \
 						error/elements.c \
-						
-						
 
 OBJS			=		$(SRC:.c=.o)
 

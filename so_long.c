@@ -12,34 +12,13 @@
 
 #include "so_long.h"
 
-int	deal_key(int key, t_map *map)
-{
-	if (key == LEFT_KEY || key == A_KEY)
-	{
-		ft_printf("Left\n");
-	}
-	if (key == DOWN_KEY || key == S_KEY)
-	{
-		ft_printf("Down\n");
-	}
-	if (key == RIGHT_KEY || key == D_KEY)
-	{
-		ft_printf("Right\n");
-	}
-	if (key == UP_KEY || key == W_KEY)
-	{
-		ft_printf("Up\n");
-	}
-	if (key == ESC)
-		close_window(map);
-	return (0);
-}
-
 void	init_struct(t_map *map)
 {
 	map->x = 0;
 	map->y = 0;
 	map->nb_coin = 0;
+	map->img_player = NULL;
+	map->step_cpt = 0;
 }
 
 int	main(int argc, char **argv)
@@ -52,7 +31,7 @@ int	main(int argc, char **argv)
 	map.mlx = mlx_init();
 	map.mlx_win = mlx_new_window(map.mlx, map.x * SPRITE, map.y * SPRITE, "So Long");
 	init_img(&map);
-	mlx_key_hook(map.mlx_win, deal_key, &map);
+	mlx_key_hook(map.mlx_win, game, &map);
 	mlx_hook(map.mlx_win, 17, 1L << 0, close_window, &map);
 	mlx_loop(map.mlx);
 	return (0);

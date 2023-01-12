@@ -12,6 +12,33 @@
 
 #include "../so_long.h"
 
+void	add_data_struct(t_map *map)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < map->y)
+	{
+		x = 0;
+		while (x < map->x)
+		{
+			if (map->maps[y][x] == 'P')
+			{
+				map->pos_x = x;
+				map->pos_y = y;
+			}
+			if (map->maps[y][x] == 'E')
+			{
+				map->exit_x = x;
+				map->exit_y = y;
+			}
+			x++;
+		}
+		y++;
+	}
+}
+
 void	map_in_tab(char **argv, t_map *map)
 {
 	int		fd;
@@ -54,4 +81,5 @@ void	init_map(char **argv, t_map *map)
 	map_size(argv, map);
 	map_in_tab(argv, map);
 	check_tab(map);
+	add_data_struct(map);
 }
