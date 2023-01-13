@@ -47,6 +47,7 @@ typedef struct s_map
 	void	*mlx;
 	void	*mlx_win;
 	char	**maps;
+	char	**cpy_maps;
 	int		x;
 	int		y;
 	int		nb_coin;

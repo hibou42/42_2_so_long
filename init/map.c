@@ -55,6 +55,22 @@ void	map_in_tab(char **argv, t_map *map)
 	close(fd);
 }
 
+void	cpy_map_in_tab(char **argv, t_map *map)
+{
+	int		fd;
+	int		i;
+
+	map->cpy_maps = ft_calloc(map->y, sizeof(char *));
+	fd = open(argv[1], 0);
+	i = 0;
+	while (i < map->y)
+	{
+		map->cpy_maps[i] = get_next_line(fd);
+		i++;
+	}
+	close(fd);
+}
+
 void	map_size(char **argv, t_map *map)
 {
 	char	*tmp;
@@ -85,6 +101,7 @@ void	init_map(char **argv, t_map *map)
 {
 	map_size(argv, map);
 	map_in_tab(argv, map);
+	cpy_map_in_tab(argv, map);
 	check_tab(map);
 	add_data_struct(map);
 }

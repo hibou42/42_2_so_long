@@ -20,9 +20,11 @@ int	free_and_exit(t_map *map)
 	while (i < map->y)
 	{
 		free(map->maps[i]);
+		free(map->cpy_maps[i]);
 		i++;
 	}
 	free(map->maps);
+	free(map->cpy_maps);
 	exit(0);
 }
 
@@ -30,5 +32,6 @@ int	close_window(t_map *map)
 {
 	if (map->maps)
 		free_and_exit(map);
+	(void)map;
 	exit(0);
 }
