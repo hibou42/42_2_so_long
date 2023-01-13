@@ -55,7 +55,7 @@ int	watch(t_map *map)
 		{
 			if (map->cpy_maps[y][x] == 'X')
 			{
-				res = write_x(map, x, y);
+				res += write_x(map, x, y);
 			}
 			x++;
 		}
