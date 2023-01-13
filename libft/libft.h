@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aschaefe <aschaefe@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 21:55:27 by aschaefe          #+#    #+#             */
-/*   Updated: 2022/11/04 20:23:46 by aschaefe         ###   ########.fr       */
+/*   Created: 2023/01/04 10:23:53 by aschaefe          #+#    #+#             */
+/*   Updated: 2023/01/13 17:51:41 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -96,14 +97,14 @@ void	*gnl_calloc(size_t nb, size_t size);
 
 /* ***** printf ***** */
 
-int	ft_printf(const char *input, ...);
-int	core_c(int job);
-int	core_s(char *str);
-int	core_di(int job);
-int	core_u(unsigned int job, int i);
-int	core_p(unsigned long long job);
-int	core_x(unsigned int nbr);
-int	core_xx(unsigned int nbr);
-int	ft_puthex(unsigned long long nbr);
+int		ft_printf(const char *input, ...);
+int		core_c(int job);
+int		core_s(char *str);
+int		core_di(int job);
+int		core_u(unsigned int job, int i);
+int		core_p(unsigned long long job);
+int		core_x(unsigned int nbr);
+int		core_xx(unsigned int nbr);
+int		ft_puthex(unsigned long long nbr);
 
 #endif
