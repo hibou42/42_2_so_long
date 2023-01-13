@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:23:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/13 15:13:14 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:29:48 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	move(t_map *map, int move_y, int move_x)
 	}
 	else if (next_case == 'V')
 	{
-		ft_printf("Victory !!!\n");
+		map->step_cpt++;
+		ft_printf("Victory !!!\nVous l'avez fait en %d pas\n", map->step_cpt);
 		close_window(map);
 	}
 }

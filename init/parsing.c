@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:37:23 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/13 16:02:21 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:26:55 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,7 @@ void	parsing(t_map *map)
 	{
 		retour = watch(map);
 	}
-	print_tab(map);
 	watch_e(map);
-	print_tab(map);
 	retour = last_check(map);
 	if (retour != 0)
 	{
