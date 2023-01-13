@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:37:51 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/13 15:00:46 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:13:35 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,22 +103,23 @@ void	map_size(char **argv, t_map *map, int i)
 void	init_map(char **argv, t_map *map)
 {
 	int		fd;
-	char	buffer[2];
+	int		read_ret;
+	char	*buffer;
 
 	fd = open(argv[1], 0);
-	if (read(fd, &buffer, 1) < 0)
+	read_ret = read(fd, &buffer, 2);
+	if (read_ret < 0)
 	{
 		ft_printf("Error\nLa carte n'est pas accessible\n");
 		close(fd);
 		close_window(map);
 	}
-	if (ft_strncmp(buffer, "\0", 1) == 0)
+	if (read_ret == 0)
 	{
-		printf("%s", buffer);
 		ft_printf("Error\nLa carte est vide\n");
 		close(fd);
 		close_window(map);
-	}	
+	}
 	close(fd);
 	map_size(argv, map, 1);
 	map_in_tab(argv, map);
