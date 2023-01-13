@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 17:20:36 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 13:31:55 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:06:11 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,28 @@ void	error_sprite(t_map *map)
 
 void	img_loading(t_map *map)
 {
-	map->img_ground = mlx_xpm_file_to_image(map->mlx, "./sprites/grass.xpm", &map->img_x, &map->img_y);
+	map->img_ground = mlx_xpm_file_to_image(map->mlx, \
+		"./sprites/grass.xpm", &map->img_x, &map->img_y);
 	if (map->img_ground == NULL)
 		error_sprite(map);
-	map->img_wall = mlx_xpm_file_to_image(map->mlx, "./sprites/wall.xpm", &map->img_x, &map->img_y);
+	map->img_wall = mlx_xpm_file_to_image(map->mlx, \
+		"./sprites/wall.xpm", &map->img_x, &map->img_y);
 	if (map->img_wall == NULL)
 		error_sprite(map);
-	map->img_player = mlx_xpm_file_to_image(map->mlx, "./sprites/owl.xpm", &map->img_x, &map->img_y);
+	map->img_player = mlx_xpm_file_to_image(map->mlx, \
+		"./sprites/owl.xpm", &map->img_x, &map->img_y);
 	if (map->img_player == NULL)
 		error_sprite(map);
-	map->img_coin = mlx_xpm_file_to_image(map->mlx, "./sprites/wood_stick.xpm", &map->img_x, &map->img_y);
+	map->img_coin = mlx_xpm_file_to_image(map->mlx, \
+		"./sprites/wood_stick.xpm", &map->img_x, &map->img_y);
 	if (map->img_coin == NULL)
 		error_sprite(map);
-	map->img_exit_empty = mlx_xpm_file_to_image(map->mlx, "./sprites/exit_empty.xpm", &map->img_x, &map->img_y);
+	map->img_exit_empty = mlx_xpm_file_to_image(map->mlx, \
+		"./sprites/exit_empty.xpm", &map->img_x, &map->img_y);
 	if (map->img_exit_empty == NULL)
 		error_sprite(map);
-	map->img_exit_full = mlx_xpm_file_to_image(map->mlx, "./sprites/exit_full.xpm", &map->img_x, &map->img_y);
+	map->img_exit_full = mlx_xpm_file_to_image(map->mlx, \
+		"./sprites/exit_full.xpm", &map->img_x, &map->img_y);
 	if (map->img_exit_full == NULL)
 		error_sprite(map);
 }

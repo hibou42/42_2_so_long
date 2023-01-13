@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:23:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 16:19:51 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:05:11 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	main(int argc, char **argv)
 	init_map(argv, &map);
 	parsing(&map);
 	map.mlx = mlx_init();
-	map.mlx_win = mlx_new_window(map.mlx, map.x * SPRITE, map.y * SPRITE, "So Long");
+	map.mlx_win = mlx_new_window(map.mlx, map.x * SPRITE, \
+		map.y * SPRITE, "So Long");
 	init_img(&map);
 	mlx_key_hook(map.mlx_win, game, &map);
 	mlx_hook(map.mlx_win, 17, 1L << 0, close_window, &map);

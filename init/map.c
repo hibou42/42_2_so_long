@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:37:51 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/10 16:53:52 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:00:46 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,19 @@ void	cpy_map_in_tab(char **argv, t_map *map)
 	close(fd);
 }
 
-void	map_size(char **argv, t_map *map)
+void	map_size(char **argv, t_map *map, int i)
 {
 	char	*tmp;
 	int		fd;
-	int		i;
 
 	fd = open(argv[1], 0);
+	if (fd == -1)
+	{
+		ft_printf("Error\nLa map n'est pas lisible ou trouvable\n");
+		close_window(map);
+	}
 	tmp = get_next_line(fd);
 	map->x = ft_strlen(tmp) - 1;
-	i = 1;
 	while (tmp)
 	{
 		free(tmp);
@@ -99,7 +102,25 @@ void	map_size(char **argv, t_map *map)
 
 void	init_map(char **argv, t_map *map)
 {
-	map_size(argv, map);
+	int		fd;
+	char	buffer[2];
+
+	fd = open(argv[1], 0);
+	if (read(fd, &buffer, 1) < 0)
+	{
+		ft_printf("Error\nLa carte n'est pas accessible\n");
+		close(fd);
+		close_window(map);
+	}
+	if (ft_strncmp(buffer, "\0", 1) == 0)
+	{
+		printf("%s", buffer);
+		ft_printf("Error\nLa carte est vide\n");
+		close(fd);
+		close_window(map);
+	}	
+	close(fd);
+	map_size(argv, map, 1);
 	map_in_tab(argv, map);
 	cpy_map_in_tab(argv, map);
 	check_tab(map);

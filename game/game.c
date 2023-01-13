@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 10:23:53 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 16:19:51 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:13:14 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void	move(t_map *map, int move_y, int move_x)
 	next_case = map->maps[map->pos_y + move_y][map->pos_x + move_x];
 	if (next_case == '0' || next_case == 'C' || next_case == 'P')
 	{
-		push_img(map, map->pos_x * SPRITE, map->pos_y * SPRITE, map->img_ground);
+		push_img(map, map->pos_x * SPRITE, \
+			map->pos_y * SPRITE, map->img_ground);
 		map->pos_x += move_x;
 		map->pos_y += move_y;
-		push_img(map, map->pos_x * SPRITE, map->pos_y * SPRITE, map->img_player);
+		push_img(map, map->pos_x * SPRITE, \
+			map->pos_y * SPRITE, map->img_player);
 		if (next_case == 'C')
 		{
 			map->nb_coin--;
@@ -60,10 +62,10 @@ void	deal_key(int key, t_map *map)
 		close_window(map);
 }
 
-void ctrl_coin(t_map *map)
+void	ctrl_coin(t_map *map)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	x = map->exit_x;
 	y = map->exit_y;

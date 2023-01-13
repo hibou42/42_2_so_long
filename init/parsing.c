@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tab.c                                              :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:37:23 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 16:29:07 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:02:21 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ int	write_x(t_map *map, int x, int y)
 	int	res;
 
 	res = 0;
-	if (map->cpy_maps[y - 1][x] != '1' && map->cpy_maps[y - 1][x] != 'X')
+	if (map->cpy_maps[y - 1][x] == '0' || map->cpy_maps[y - 1][x] == 'C' )
 	{
 		map->cpy_maps[y - 1][x] = 'X';
 		res++;
 	}
-	if (map->cpy_maps[y + 1][x] != '1' && map->cpy_maps[y + 1][x] != 'X')
+	if (map->cpy_maps[y + 1][x] == '0' || map->cpy_maps[y + 1][x] == 'C')
 	{
 		map->cpy_maps[y + 1][x] = 'X';
 		res++;
 	}
-	if (map->cpy_maps[y][x - 1] != '1' && map->cpy_maps[y][x - 1] != 'X')
+	if (map->cpy_maps[y][x - 1] == '0' || map->cpy_maps[y][x - 1] == 'C')
 	{
 		map->cpy_maps[y][x - 1] = 'X';
 		res++;
 	}
-	if (map->cpy_maps[y][x + 1] != '1' && map->cpy_maps[y][x + 1] != 'X')
+	if (map->cpy_maps[y][x + 1] == '0' || map->cpy_maps[y][x + 1] == 'C')
 	{
 		map->cpy_maps[y][x + 1] = 'X';
 		res++;
@@ -45,7 +45,7 @@ int	watch(t_map *map)
 	int	x;
 	int	y;
 	int	res;
-	
+
 	res = 0;
 	y = 0;
 	while (y < map->y)
@@ -61,14 +61,14 @@ int	watch(t_map *map)
 		}
 		y++;
 	}
-	return(res);
+	return (res);
 }
 
 int	init_watch(t_map *map)
 {
 	int	x;
 	int	y;
-	
+
 	y = 0;
 	while (y < map->y)
 	{
@@ -78,7 +78,7 @@ int	init_watch(t_map *map)
 			if (map->cpy_maps[y][x] == 'P')
 			{
 				map->cpy_maps[y][x] = 'X';
-				return(1);
+				return (1);
 			}
 			x++;
 		}
@@ -92,7 +92,7 @@ int	last_check(t_map *map)
 	int	x;
 	int	y;
 	int	res;
-	
+
 	res = 0;
 	y = 0;
 	while (y < map->y)
@@ -108,18 +108,21 @@ int	last_check(t_map *map)
 		}
 		y++;
 	}
-	return(res);
+	return (res);
 }
 
 void	parsing(t_map *map)
 {
-	int		retour;
+	int	retour;
 
 	retour = init_watch(map);
 	while (retour != 0)
 	{
 		retour = watch(map);
 	}
+	print_tab(map);
+	watch_e(map);
+	print_tab(map);
 	retour = last_check(map);
 	if (retour != 0)
 	{

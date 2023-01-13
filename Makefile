@@ -12,6 +12,7 @@ SRC				=		so_long.c \
 						init/map.c \
 						init/img.c \
 						init/parsing.c \
+						init/parsing2.c \
 						game/game.c \
 						error/exit.c \
 						error/arg.c \

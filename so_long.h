@@ -6,7 +6,7 @@
 /*   By: aschaefe <aschaefe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:53:08 by aschaefe          #+#    #+#             */
-/*   Updated: 2023/01/11 14:03:56 by aschaefe         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:48:09 by aschaefe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int		check_arg(int argc, char **argv);
 void	init_map(char **argv, t_map *map);
 void	check_tab(t_map *map);
 void	parsing(t_map *map);
+void	watch_e(t_map *map);
 int		element_check(t_map *map, int x, int y);
 int		element_check2(t_map *map, int x, int y);
 void	init_img(t_map *map);
